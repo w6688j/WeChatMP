@@ -1,0 +1,3 @@
+<!--index.wxml-->
+<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="getToken"> 申请令牌 </button>
