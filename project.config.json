@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
 	"appid": "wx8390c959e24ce6d0",
-	"projectname": "first_mp",
+	"projectname": "WeChatMP",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
