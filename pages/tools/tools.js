@@ -33,5 +33,34 @@ Page({
                 }
             }
         });
+    },
+    pay: event => {
+        let token = wx.getStorageSync('token');
+        let that = this;
+        wx.request({
+            url: baseUrl + '/order',
+            header: {
+                token: token
+            },
+            data: {
+                products: [
+                    {
+                        product_id: 1,
+                        count: 2
+                    },
+                    {
+                        product_id: 2,
+                        count: 3
+                    }
+                ]
+            },
+            method: 'POST',
+            success: result => {
+                console.log(result.data);
+            },
+            fail: result => {
+                console.log(result.data);
+            }
+        })
     }
 });

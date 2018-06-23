@@ -1,3 +1,5 @@
 <!--index.wxml-->
 <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
             disabled="{{disabled}}" bindtap="getToken"> 申请令牌 </button>
+<button type="warn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+            disabled="{{disabled}}" bindtap="pay"> 支付 </button>
