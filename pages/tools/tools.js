@@ -83,19 +83,26 @@ Page({
                 success: result => {
                     let preData = result.data;
                     console.log(preData);
-                    wx.requestPayment({
-                        timeStamp: preData.timeStamp.toString(),
-                        nonceStr: preData.nonceStr,
-                        package: preData.package,
-                        signType: preData.signType,
-                        paySign: preData.paySign,
-                        success: function (res) {
-                            console.log(res.data);
-                        },
-                        fail: function (error) {
-                            console.log(error);
-                        }
-                    });
+                    if (preData.error_code != 0) {
+                        wx.showModal({
+                            title: 'Error',
+                            content: preData.msg
+                        });
+                    } else {
+                        wx.requestPayment({
+                            timeStamp: preData.timeStamp.toString(),
+                            nonceStr: preData.nonceStr,
+                            package: preData.package,
+                            signType: preData.signType,
+                            paySign: preData.paySign,
+                            success: function (res) {
+                                console.log(res.data);
+                            },
+                            fail: function (error) {
+                                console.log(error);
+                            }
+                        });
+                    }
                 },
                 fail: result => {
                     console.log(result.data);
