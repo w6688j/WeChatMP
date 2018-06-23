@@ -3,7 +3,7 @@
 const app = getApp();
 let baseUrl = 'https://mp.w6688j.com/api/v1';
 Page({
-    getToken: event => {
+    getToken: function () {
         //调用微信登录接口
         wx.login({
             success: res => {
@@ -34,9 +34,9 @@ Page({
             }
         });
     },
-    pay: event => {
+    pay: function () {
         let token = wx.getStorageSync('token');
-        let that = this;
+        var that = this;
         wx.request({
             url: baseUrl + '/order',
             header: {
@@ -57,10 +57,50 @@ Page({
             method: 'POST',
             success: result => {
                 console.log(result.data);
+                if (result.data.pass) {
+                    wx.setStorageSync('order_id', result.data.order_id);
+                    that.getPreOrder(token, result.data.order_id);
+                } else {
+                    console.log('订单未创建成功');
+                }
             },
             fail: result => {
                 console.log(result.data);
             }
         })
+    },
+    getPreOrder: function (token, orderID) {
+        if (token) {
+            wx.request({
+                url: baseUrl + '/pay/pre_order',
+                header: {
+                    token: token
+                },
+                data: {
+                    id: orderID
+                },
+                method: 'POST',
+                success: result => {
+                    let preData = result.data;
+                    console.log(preData);
+                    wx.requestPayment({
+                        timeStamp: preData.timeStamp.toString(),
+                        nonceStr: preData.nonceStr,
+                        package: preData.package,
+                        signType: preData.signType,
+                        paySign: preData.paySign,
+                        success: function (res) {
+                            console.log(res.data);
+                        },
+                        fail: function (error) {
+                            console.log(error);
+                        }
+                    });
+                },
+                fail: result => {
+                    console.log(result.data);
+                }
+            })
+        }
     }
 });
