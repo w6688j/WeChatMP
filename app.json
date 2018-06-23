@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/tools/tools",
     "pages/logs/logs"
   ],
   "window": {
@@ -15,10 +14,6 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/tools/tools",
-        "text": "小工具"
       },
       {
         "pagePath": "pages/logs/logs",
