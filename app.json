@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home",
+    "pages/product/product",
+    "pages/theme/theme"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,12 +13,12 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/home/home",
+        "text": "产品"
       }
     ]
   },
