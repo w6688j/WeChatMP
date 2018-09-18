@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/category/category",
+    "pages/cart/cart",
     "pages/product/product",
-    "pages/theme/theme"
+    "pages/theme/theme",
+    "pages/order/order"
   ],
   "window": {
     "navigationBarBackgroundColor": "#AB956D",
@@ -21,13 +24,13 @@
         "text": "主页"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/category/category",
         "iconPath": "imgs/toolbar/category.png",
         "selectedIconPath": "imgs/toolbar/category@selected.png",
         "text": "分类"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/cart/cart",
         "iconPath": "imgs/toolbar/cart.png",
         "selectedIconPath": "imgs/toolbar/cart@selected.png",
         "text": "购物车"
