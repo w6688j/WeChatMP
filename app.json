@@ -3,9 +3,11 @@
     "pages/home/home",
     "pages/category/category",
     "pages/cart/cart",
+    "pages/my/my",
     "pages/product/product",
     "pages/theme/theme",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/pay-result/pay-result"
   ],
   "window": {
     "navigationBarBackgroundColor": "#AB956D",
@@ -36,7 +38,7 @@
         "text": "购物车"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/my/my",
         "iconPath": "imgs/toolbar/my.png",
         "selectedIconPath": "imgs/toolbar/my@selected.png",
         "text": "我的"

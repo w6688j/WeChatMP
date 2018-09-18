@@ -56,7 +56,7 @@ Page({
                         basicInfo: {
                             orderTime: data.create_time,
                             orderNo: data.order_no
-                        },
+                        }
                     });
 
                     // 快照地址
