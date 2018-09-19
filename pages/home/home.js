@@ -14,7 +14,7 @@ Page({
         this._loadData();
     },
 
-    _loadData: function () {
+    _loadData: function (callback) {
         var id = 1;
         home.getBannerData(id, res => {
             this.setData({
@@ -32,6 +32,8 @@ Page({
             this.setData({
                 productsArr: res
             });
+
+            callback && callback();
         });
     },
 
@@ -47,6 +49,13 @@ Page({
         let name = home.getDataSet(event, 'name');
         wx.navigateTo({
             'url': '../theme/theme?id=' + id + '&name=' + name
+        });
+    },
+
+    /*下拉刷新页面*/
+    onPullDownRefresh: function () {
+        this._loadData(() => {
+            wx.stopPullDownRefresh();
         });
     }
 });
