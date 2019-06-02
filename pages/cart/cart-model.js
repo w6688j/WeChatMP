@@ -1,5 +1,5 @@
 /**
- * Created by jimmy on 17/03/05.
+ * Created by wangjian on 17/03/05.
  */
 import {Base} from '../../utils/base.js';
 
